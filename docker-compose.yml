@@ -8,8 +8,4 @@ services:
   slave1:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    image: otomato/jenkins-slave-alpine:11
-  slave2:
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    image: otomato/jenkins-slave:0.7 
+    image: otomato/jenkins-slave-alpine:11.1
