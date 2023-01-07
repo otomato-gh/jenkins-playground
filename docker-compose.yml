@@ -5,16 +5,11 @@ services:
     image: jenkins/jenkins:lts
     ports:
       - "80:8080"
-    networks:
-      - front-tier
-      - back-tier
   slave1:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     image: otomato/jenkins-slave-alpine:11
-    networks:
-      - front-tier
-      - back-tier
-networks:
-  front-tier:
-  back-tier:
+  slave2:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    image: otomato/jenkins-slave:0.7 
